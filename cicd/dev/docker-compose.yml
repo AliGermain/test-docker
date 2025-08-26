@@ -7,6 +7,7 @@ services:
       - ./cicd/dev/api:/bb/api
       - ./live_data:/bb/live_data
       - ./requirements-pip.txt:/bb/requirements-pip.txt
+      - ./big_brother:/big_brother/
     ports:
       - "5432:5432"
     command: sleep infinity
