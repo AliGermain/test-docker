@@ -1,0 +1,28 @@
+# big_brother/playbook/add_key_to_machines.yml
+- name: Copier la clé SSH sur les machines avec ssh-copy-id
+  hosts: all
+  gather_facts: false
+
+  vars:
+    ssh_key_path: ""          # à passer en -e, chemin absolu vers votre cle.pub
+    ssh_user: "{{ ssh_user | default('rdteam') }}"
+    ssh_password: "" # mettre le mot de passe SSH ici ou le passer en -e ssh_password=<password>
+
+  tasks:
+    - name: Vérifier que la clé SSH existe sur la machine de contrôle
+      delegate_to: localhost
+      stat:
+        path: "{{ ssh_key_path }}"
+      register: key_file
+
+    - name: Stopper si la clé n'existe pas
+      delegate_to: localhost
+      fail:
+        msg: "La clé SSH spécifiée ({{ ssh_key_path }}) n'existe pas."
+      when: not key_file.stat.exists
+
+    - name: Copier la clé via ssh-copy-id (force mode)
+      delegate_to: localhost
+      ansible.builtin.command:
+        cmd: >
+          sshpass -p "{{ ssh_password }}" ssh-copy-id -f -i "{{ ssh_key_path }}" -o StrictHostKeyChecking=no {{ ssh_user }}@{{ inventory_hostname }}
