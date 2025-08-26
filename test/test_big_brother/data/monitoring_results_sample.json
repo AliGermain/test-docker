@@ -1,0 +1,92 @@
+{
+   "metadata": {
+      "timestamp": "2022-12-16 13:44:43",
+      "timedelta": "0:02:15"
+   },
+   "instances": [
+      {
+         "name": "apollo-1",
+         "ip": "192.168.10.101",
+         "user": "rdteam",
+         "net_interface": "eno50",
+         "cpu": 80,
+         "load_avg_1": 142.35,
+         "load_avg_5": 116.5,
+         "load_avg_15": 110.0,
+         "mem_total": 528206460,
+         "mem_used": 180136460,
+         "disk_file_sys": "/dev/mapper/ubuntu--vg-ubuntu--lv",
+         "disk_space_total": 7747996276,
+         "disk_space_used": 1404426032,
+         "disk_space_avail": 5953017668,
+         "net_send_rate": 65126,
+         "net_receive_rate": 1048576,
+         "uptime": 148,
+         "usage_memo": "TCu \ud83d\udef0\ufe0f+Landsat"
+      },
+      {
+         "name": "helios",
+         "ip": "192.168.10.107",
+         "user": "rdteam",
+         "net_interface": "ens4",
+         "cpu": 12,
+         "load_avg_1": 0.65,
+         "load_avg_5": 0.51,
+         "load_avg_15": 0.32,
+         "mem_total": 131800368,
+         "mem_used": 9060700,
+         "disk_file_sys": "/dev/mapper/vgubuntu-root",
+         "disk_space_total": 957811888,
+         "disk_space_used": 324989292,
+         "disk_space_avail": 584094740,
+         "net_send_rate": 1741,
+         "net_receive_rate": 1188,
+         "uptime": 0,
+         "usage_memo": "MK \ud83d\udda5\ufe0f"
+      },
+      {
+         "name": "scoubi",
+         "ip": "192.168.10.123",
+         "user": "rdteam",
+         "net_interface": null,
+         "cpu": null,
+         "load_avg_1": null,
+         "load_avg_5": null,
+         "load_avg_15": null,
+         "mem_total": null,
+         "mem_used": null,
+         "disk_file_sys": null,
+         "disk_space_total": null,
+         "disk_space_used": null,
+         "disk_space_avail": null,
+         "net_send_rate": null,
+         "net_receive_rate": null,
+         "uptime": null,
+         "usage_memo": null
+      }
+   ],
+   "storages": [
+      {
+         "name": "datacenter",
+         "type": "Synology NAS",
+         "ip": "192.168.10.106",
+         "user": "rdteam",
+         "disk_path": "/home/rdteam/mnt/datacenter",
+         "disk_file_sys": "//192.168.10.206/datacenter",
+         "disk_space_total": 82465199988,
+         "disk_space_used": 67437224600,
+         "disk_space_avail": 15027975388
+      },
+      {
+         "name": "datagri",
+         "type": "NetApp NAS",
+         "ip": "192.168.10.106",
+         "user": "rdteam",
+         "disk_path": "/mnt/datagri",
+         "disk_file_sys": "192.168.10.225:/agri/",
+         "disk_space_total": 7140383744,
+         "disk_space_used": 5428245504,
+         "disk_space_avail": 1712138240
+      }
+   ]
+}
