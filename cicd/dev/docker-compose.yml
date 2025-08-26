@@ -4,8 +4,9 @@ services:
     container_name: DockerFile
     build: ./api
     volumes:
-      - ./cicd/dev/api:/api
-      - ./live_data:/live_data
+      - ./cicd/dev/api:/bb/api
+      - ./live_data:/bb/live_data
+      -./requirements-pip.txt:/bb/requirements-pip.txt
     ports:
       -"5432:5432"
     command: sleep infinity
