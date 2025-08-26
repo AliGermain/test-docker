@@ -1,1 +1,16 @@
-
+services:
+  bb:
+    image: DockerFile
+    container_name: DockerFile
+    build: ./api
+    volumes:
+      - ./cicd/dev/api:/api
+      - ./live_data:/live_data
+    ports:
+      -"3000:3000"
+    command: sleep infinity
+    network_mode: host
+    
+networks:
+  default:
+    name: big_brother
