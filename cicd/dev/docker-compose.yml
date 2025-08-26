@@ -6,7 +6,7 @@ services:
     volumes:
       - ./cicd/dev/api:/bb/api
       - ./live_data:/bb/live_data
-      -./requirements-pip.txt:/bb/requirements-pip.txt
+      - ./requirements-pip.txt:/bb/requirements-pip.txt
     ports:
       -"5432:5432"
     command: sleep infinity
