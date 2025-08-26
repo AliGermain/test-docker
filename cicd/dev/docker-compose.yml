@@ -1,14 +1,14 @@
 services:
   bb:
-    image: DockerFile
-    container_name: DockerFile
+    image: big_bro
+    container_name: big_bro
     build: ./api
     volumes:
       - ./cicd/dev/api:/bb/api
       - ./live_data:/bb/live_data
       - ./requirements-pip.txt:/bb/requirements-pip.txt
     ports:
-      -"5432:5432"
+      - "5432:5432"
     command: sleep infinity
     network_mode: host
     
