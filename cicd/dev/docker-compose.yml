@@ -5,7 +5,7 @@ services:
     build: ./api
     volumes:
       - ./cicd/dev/api:/bb/api
-      - ../../live_data:/bb/live_data
+      - ../../live_data:/big_brother/live_data
       - ../../requirements-pip.txt:/bb/requirements-pip.txt
       - ../../big_brother:/big_brother/
     env_file:
