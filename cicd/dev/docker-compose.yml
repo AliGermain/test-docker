@@ -8,6 +8,8 @@ services:
       - ./live_data:/bb/live_data
       - ./requirements-pip.txt:/bb/requirements-pip.txt
       - ./big_brother:/big_brother/
+    env_file:
+      - ./docker-compose.env
     ports:
       - "5432:5432"
     command: sleep infinity
